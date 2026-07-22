@@ -1,0 +1,111 @@
+HEADLINICA - HOW TO ADD A NEW BLOG
+
+This website uses a lightweight JavaScript blog system. You can publish weekly articles by editing only one file:
+
+data/blogs-data.js
+
+1. HOW TO ADD A NEW BLOG
+
+Open data/blogs-data.js. Copy one existing article object, paste it inside the blogs array, and change the fields.
+
+Use a unique id with lowercase letters and hyphens:
+
+id: "new-city-budget-plan"
+
+The blog detail URL will become:
+
+blog-post.html?id=new-city-budget-plan
+
+Required fields:
+
+- id
+- title
+- seoTitle
+- metaDescription
+- excerpt
+- category
+- author
+- date
+- isoDate
+- image
+- imageAlt
+- content
+
+The content field accepts HTML inside a template string. You can use paragraphs, headings, and blockquotes:
+
+content: `
+  <p>Your first paragraph.</p>
+  <h2>Your section heading</h2>
+  <p>Your next paragraph.</p>
+`
+
+2. HOW TO UPLOAD IMAGES
+
+Option A: Use a remote royalty-free image URL.
+
+Paste the image URL into the image field:
+
+image: "https://images.unsplash.com/example.jpg"
+
+Option B: Use a local image.
+
+Place the file inside the images folder, for example:
+
+images/city-budget.jpg
+
+Then update the image field:
+
+image: "images/city-budget.jpg"
+
+Always add descriptive alt text in imageAlt.
+
+3. HOW TO EDIT CATEGORIES
+
+Categories are controlled by each article's category field:
+
+category: "Technology"
+
+The blog page automatically reads categories from data/blogs-data.js and adds them to the filter dropdown.
+
+Suggested categories:
+
+ 
+- Business
+- Technology
+- Economy
+- Society
+- Opinion
+
+4. HOW TO EDIT HOMEPAGE FEATURED STORIES
+
+The homepage featured story is in index.html. Search for:
+
+Featured Analysis
+
+Change the title, excerpt, image URL, and article link.
+
+For smaller trending and latest stories, search index.html for:
+
+Trending
+Latest News
+Opinion
+Popular Articles
+
+Update those links and titles as needed.
+
+5. HOW TO PUBLISH WEEKLY ARTICLES WITHOUT TOUCHING HTML FILES
+
+For normal weekly publishing, only edit data/blogs-data.js.
+
+Step-by-step:
+
+1. Copy an existing article object.
+2. Paste it at the top of the blogs array.
+3. Give it a new id.
+4. Add the title, excerpt, category, author, date, image, alt text, SEO fields, and full content.
+5. Save the file.
+6. Open blog.html in a browser.
+7. Your new article will appear automatically.
+8. Click the article to confirm it opens on blog-post.html.
+
+You do not need to edit blog.html or blog-post.html for new articles.
